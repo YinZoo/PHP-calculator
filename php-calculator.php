@@ -1,7 +1,7 @@
 <?php
-// Simple Calculator met functies en loop
+// Simple calculator with functions and a loop
 
-// Vraagt om een getal en blijft vragen tot de invoer geldig is
+// Prompts for a number until the input is valid
 function getNumber(string $prompt): float
 {
     while (true) {
@@ -13,7 +13,7 @@ function getNumber(string $prompt): float
     }
 }
 
-// Vraagt om een operator en blijft vragen tot de invoer geldig is
+// Prompts for an operator until the input is valid
 function getOperation(): string
 {
     $valid = ["+", "-", "*", "/"];
@@ -26,7 +26,7 @@ function getOperation(): string
     }
 }
 
-// Voert de berekening uit
+// Performs the calculation
 function calculate(float $num1, float $num2, string $operation): float|string
 {
     switch ($operation) {
@@ -46,14 +46,14 @@ function calculate(float $num1, float $num2, string $operation): float|string
     }
 }
 
-// Vraagt of de gebruiker opnieuw wil rekenen
+// Asks whether the user wants to calculate again
 function askAgain(): bool
 {
     $answer = strtolower(trim(readline("Calculate again? (y/n): ")));
     return $answer === "y" || $answer === "yes";
 }
 
-// Hoofdprogramma
+// Main program
 echo "Simple Calculator\n";
 
 do {
